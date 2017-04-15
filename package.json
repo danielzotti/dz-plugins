@@ -1,0 +1,37 @@
+{
+  "name": "dz-plugins",
+  "version": "1.0.0",
+  "description": "JS and CSS plugin suite",
+  "main": "dz-plugins.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/danielzotti/dz-plugins.git"
+  },
+  "author": "Daniel Zotti",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danielzotti/dz-plugins/issues"
+  },
+  "homepage": "https://github.com/danielzotti/dz-plugins#readme",
+  "devDependencies": {
+    "browserify": "^14.3.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-typescript": "^3.1.6",
+    "gulp-uglify": "^2.1.2",
+    "gulp-util": "^3.0.8",
+    "tsify": "^3.0.1",
+    "typescript": "^2.2.2",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.9.0"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
