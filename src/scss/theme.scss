@@ -1,0 +1,19 @@
+@import "./modules/dz-common";
+
+html, body {
+    position: relative;
+    margin:0;
+    padding:0;
+}
+
+body {
+    padding: 30px;
+    @media(min-width: $sm-min) {
+        margin-left: 280px;
+    }
+}
+
+.section {
+    min-height: 800px;
+}
+

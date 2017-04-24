@@ -1,0 +1,127 @@
+$icon-transition-property:transform,transform-origin,width,height,top,bottom,margin !default; //.15s
+$icon-transition-duration:.15s !default; //.15s
+$icon-transition-timing-function:ease-in-out !default; //ease
+
+@mixin icon-hamburger($width: 70px, $height: 70px, $color: black) {
+    $element-height: $width / 10;
+    $element-border-radius: $element-height / 2;
+    &,&:before,&:after {
+        position:absolute;
+        display:block;
+        background-color: $color;
+        height: $element-height;
+        border-radius: $element-border-radius;
+
+        transition-property: $icon-transition-property;
+        transition-duration: $icon-transition-duration;
+        transition-timing-function: $icon-transition-timing-function;
+    }
+    & {
+        width:$width;
+        top:($height / 2) - ($element-height / 2);
+    }
+    &:after {
+        content:'';
+        width: $width;
+        top:($height / 3) - ($element-height / 2);
+    }
+    &:before {
+        content:'';
+        width: $width;
+        bottom:($height / 3) - ($element-height / 2);
+    } 
+}
+
+@mixin icon-times($width: 70px, $height: 70px, $color: black) {
+    $element-height: $width / 10;
+    $element-border-radius: $element-height / 2;
+    & {
+        top:-$element-height;
+        width:0;
+        height:0;
+    }
+    &:before,&:after {
+        position:absolute;
+        display:block;
+        background-color: $color;
+        height: $element-height;
+        border-radius: $element-border-radius;
+        top:($height / 2) + ($element-height / 4);
+
+        transition-property: $icon-transition-property;
+        transition-duration: $icon-transition-duration;
+        transition-timing-function: $icon-transition-timing-function;
+    }
+    &:after {
+        content:'';
+        width: $width;
+        transform:rotate(-45deg);
+    }
+    &:before {
+        content:'';
+        width: $width;
+        transform:rotate(45deg);
+    }
+}
+
+@mixin icon-arrow($direction: 'left',$width: 70px, $height: 70px, $color: black) {
+    $element-height: $width / 10;
+    $element-border-radius: $element-height / 2;
+
+    $multiplier: sqrt(2);
+    
+    $element-up-rotation: -45deg;
+    $element-up-rotation-origin: left top;
+    $element-down-rotation: 45deg;
+    $element-down-rotation-origin: left bottom;
+
+    /*@if $direction == 'left' {
+        $element-up-rotation: -45deg;
+        $element-up-rotation-origin: left top;
+        $element-down-rotation: 45deg;
+        $element-down-rotation-origin: left bottom;
+    }*/
+    @if $direction == 'right' {
+        $element-up-rotation: 45deg;
+        $element-up-rotation-origin: right top;
+        $element-down-rotation: -45deg;
+        $element-down-rotation-origin: right bottom;
+    }
+
+
+    &,&:before,&:after {
+        position:absolute;
+        display:block;
+        background-color: $color;
+        height: $element-height;
+        border-radius: $element-border-radius;
+
+        transition-property: $icon-transition-property;
+        transition-duration: $icon-transition-duration;
+        transition-timing-function: $icon-transition-timing-function;
+    }
+    & {
+        width:$width;
+        top:($height / 2) - ($element-height / 2);
+
+        @if $direction == 'top' {
+            transform:rotate(90deg);
+        }
+        @if $direction == 'bottom' {
+            transform:rotate(-90deg);
+        }
+    }
+    &:before {
+        content:'';
+        width: $width;
+        transform-origin:$element-up-rotation-origin;
+        transform:translate3d(0,1px,0) rotate($element-up-rotation) scaleX(.7);
+    }
+    &:after {
+        content:'';
+        width: $width;
+        transform-origin:$element-down-rotation-origin;
+        transform:translate3d(0,-1px,0) rotate($element-down-rotation) scaleX(.7);
+    } 
+}
+

@@ -2,14 +2,60 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>DZ Plugins</title>
+    <title>DZ Menu Side</title>
     <link href="css/style.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 </head>
 
-<body>
-    <h1>Npm Plugin scaffold</h1>    
-    <p id="target">Loading ...</p>
+<body id="top">
+    <h1>Dz Menu Side</h1>    
+    <div class="dz-menu-side-container" dz-menu-side-container>
+
+        <div class="dz-menu-side-button" dz-menu-side-button>
+            <i></i>
+        </div>
+
+        <div class="dz-menu-side-inner">
+            <div class="dz-menu-side">
+
+                <a href="#top" class="dz-menu-side-logo" dz-menu-side-item>
+                    <span>Top</span>
+                </a>
+
+                <div class="dz-menu-side-nav" ps-scrollspy-menu>
+                    <ul>
+                        <li>
+                            <a href="#section-1" dz-menu-side-item>
+                                    Item 1
+                                </a>
+                        </li>
+                        <li>
+                            <a href="#section-2" dz-menu-side-item>
+                                    Item 2
+                                </a>
+                        </li>
+                        <li>
+                            <a href="#section-3" dz-menu-side-item>
+                                    Item 3
+                                </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div id="section-1" class="section">
+            <h2>Section 1</h2>
+        </div>
+        <div id="section-2" class="section">
+            <h2>Section 2</h2>
+        </div>
+        <div id="section-3" class="section">
+            <h2>Section 3</h2>
+        </div>
+    </div>
     <script src="js/bundle.js"></script>
 </body>
 </html>
